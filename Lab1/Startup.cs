@@ -1,6 +1,7 @@
 ﻿using Lab1.Generators;
 using Lab1.Models;
-using Lab1.Utility;
+using Lab1.Queries;
+using Lab1.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Lab1
@@ -15,6 +16,8 @@ namespace Lab1
                 .AddTransient<Schedule>()
                 .AddTransient<ScheduleGenerator>()
                 .AddTransient<ScheduleQueries>()
+                .AddSingleton<XMLCreator>()
+                .AddSingleton<ScheduleQueriesXml>()
                 .BuildServiceProvider();
         }
     }

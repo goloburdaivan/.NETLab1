@@ -2,7 +2,7 @@
 using Lab1.Generators;
 using Lab1.Models;
 
-namespace Lab1.Utility
+namespace Lab1.Queries
 {
     public class ScheduleQueries
     {
@@ -114,7 +114,7 @@ namespace Lab1.Utility
 
         public void GetCathedrasOnEachFaculcy()
         {
-            var cathedrasWithFaculties = 
+            var cathedrasWithFaculties =
                 from cathedra in _cathedras
                 join faculty in _faculcies on cathedra.FaculcyId equals faculty.Id
                 select new { Cathedra = cathedra, Faculty = faculty };
