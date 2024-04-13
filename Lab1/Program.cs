@@ -1,41 +1,26 @@
 ﻿using Lab1;
-using Lab1.Factory;
-using Lab1.Generators;
-using Lab1.Models;
+using Lab1.Queries;
+using System.Reflection;
+
 namespace Program
 {
     public class Program
     {
         public static void Main(string[] args)
         {
-
             var serviceProvider = Startup.ConfigureServices();
-            ScheduleGenerator? generator = serviceProvider.GetService(typeof(ScheduleGenerator)) as ScheduleGenerator;
+            ScheduleQueries? queries = serviceProvider.GetService(typeof(ScheduleQueries)) as ScheduleQueries;
 
-            if (generator == null)
-            {
-                Console.WriteLine("Error getting depedency from container");
-                return;
-            }
+            MethodInfo[] methods = typeof(ScheduleQueries).GetMethods(BindingFlags.Public | BindingFlags.Instance);
 
-            Schedule schedule = generator.GenerateSchedule(100);
-            List<ScheduleItem> scheduleItems = schedule.ToList();
-            using (var stream = File.Create("schedule.json"))
+            foreach (var method in methods)
             {
-                var handler = JsonHandlerFactory.CreateJsonHandler("JsonNode");
-                handler.SerializeFile(scheduleItems, stream);
-            }
-
-            using (var stream = File.Open("schedule.json", FileMode.Open))
-            {
-                var handler = JsonHandlerFactory.CreateJsonHandler("JsonDocument");
-                var items = handler.DeserializeFile(stream);
-                foreach (var item in items)
+                if (method.ReturnType == typeof(void) && method.GetParameters().Length == 0)
                 {
-                    item.Print();
+                    Console.WriteLine($"----- {method.Name} -----");
+                    method.Invoke(queries, null);
                 }
             }
-
         }
     }
 }
