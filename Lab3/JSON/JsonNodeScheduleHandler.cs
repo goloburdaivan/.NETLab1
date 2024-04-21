@@ -19,7 +19,7 @@ namespace Lab1.JSON
                         Id = node!["Id"].GetValue<int>(),
                         ClassroomSubject = ParseClassroomSubject(node!["ClassroomSubject"]),
                         Date = node!["Date"].GetValue<DateTime>(),
-                        Groups = JsonSerializer.Deserialize<List<Group>>(node!["Groups"]),
+                        Groups = ParseGroups(node!["Groups"]),
                         Teacher = ParseTeacher(node!["Teacher"])
                     };
                     result.Add(item);
@@ -72,6 +72,23 @@ namespace Lab1.JSON
                 Name = node!["Name"].GetValue<string>(),
                 ClassroomId = node!["ClassroomId"].GetValue<int>()
             };
+
+            return result;
+        }
+
+        private List<Group> ParseGroups(JsonNode node)
+        {
+            List<Group> result = new List<Group>();
+            JsonArray array = node.AsArray();
+            foreach (JsonNode item in array)
+            {
+                Group group = new Group
+                {
+                    Code = item!["Code"].GetValue<string>(),
+                    Id = item!["Id"].GetValue<int>()
+                };
+                result.Add(group);
+            }
 
             return result;
         }
