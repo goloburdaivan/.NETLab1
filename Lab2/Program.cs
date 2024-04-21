@@ -1,5 +1,6 @@
 ﻿using Lab1;
 using Lab1.Queries;
+using Lab1.Services;
 using System.Reflection;
 
 public class Program
@@ -19,5 +20,8 @@ public class Program
                 method.Invoke(queries, null);
             }
         }
+
+        XMLPrinter printer = new XMLPrinter();
+        printer.PrintSerialized();
     }
 }

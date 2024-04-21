@@ -2,6 +2,8 @@
 using Lab1.Factory;
 using Lab1.Generators;
 using Lab1.Models;
+using Lab1.Services;
+using System.Xml;
 
 namespace Program
 {
@@ -29,14 +31,13 @@ namespace Program
 
             using (var stream = File.Open("schedule.json", FileMode.Open))
             {
-                var handler = JsonHandlerFactory.CreateJsonHandler("JsonDocument");
+                var handler = JsonHandlerFactory.CreateJsonHandler("JsonNode");
                 var items = handler.DeserializeFile(stream);
                 foreach (var item in items)
                 {
                     item.Print();
                 }
             }
-
         }
     }
 }
