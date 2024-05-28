@@ -33,7 +33,7 @@
             }
 
             return RequestHandler.Invoke(request) ?? "";
-        }
+        }   
 
         ~ServerSingleton() 
         {

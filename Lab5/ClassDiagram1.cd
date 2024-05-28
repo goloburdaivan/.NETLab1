@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Lab5.Decorators.AssembledSystemUnit" Collapsed="true">
+    <Position X="7" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Decorators\AssembledSystemUnit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab5.Decorators.FullComputer" Collapsed="true">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Decorators\FullComputer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab5.Decorators.ProductDecorator" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Decorators\ProductDecorator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab5.Products.Motherboard" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAQAAMAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Products\Motherboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab5.Products.Product" Collapsed="true">
+    <Position X="2" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAMAAAAAQAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Products\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab5.Products.Processor" Collapsed="true">
+    <Position X="1.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAMAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Products\Processor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab5.Products.RAM" Collapsed="true">
+    <Position X="2.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAMAAAAAADAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Products\RAM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Lab5.Products.VideoCard" Collapsed="true">
+    <Position X="4.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAMAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Products\VideoCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
